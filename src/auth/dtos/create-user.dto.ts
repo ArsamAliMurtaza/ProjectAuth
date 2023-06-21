@@ -8,7 +8,7 @@ import {
   MinLength,
   Validate,
 } from 'class-validator';
-import { MatchConstraint } from 'src/common/decorators/match-properties.decorator';
+import { MatchConstraint } from '../../common/decorators/match-properties.decorator';
 
 export class CreateUserDto {
   @IsNotEmpty()

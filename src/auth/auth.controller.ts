@@ -13,8 +13,7 @@ import { SigninDto } from './dtos/signin.dto';
 import { UserEntity } from 'src/user/entities/user.entity';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { AuthGuard, Public } from 'src/auth/auth.guard';
-import { logoutDto } from './dtos/logout.dto';
-import { tokenDto } from './dtos/token.dto';
+import { TokenDto } from './dtos/token.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -30,19 +29,24 @@ export class AuthController {
   @Public()
   @HttpCode(HttpStatus.CREATED)
   @Post('register')
-  register(@Body() CreateUserDto: CreateUserDto): Promise<Partial<UserEntity>> {
-    return this.authService.register(CreateUserDto);
+  register(@Body() createUserDto: CreateUserDto): Promise<Partial<UserEntity>> {
+    return this.authService.register(createUserDto);
   }
 
   @Get('profile')
+  // @UseGuards(AuthGuard)
   getProfile(@Request() req) {
     return req.user;
   }
+
+  @Public()
+  @HttpCode(HttpStatus.OK)
   @Post('generateAccessToken')
-  async refreshToken(@Body() tokenDto: tokenDto): Promise<any> {
+  refreshToken(@Body() tokenDto: TokenDto): Promise<any> {
     const { refreshToken } = tokenDto;
     return this.authService.refreshToken(refreshToken);
   }
+
   @Public()
   @UseGuards(AuthGuard)
   @HttpCode(HttpStatus.OK)

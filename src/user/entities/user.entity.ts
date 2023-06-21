@@ -18,6 +18,6 @@ export class UserEntity extends EntityBase {
   @Column()
   age: number;
 
+  @Column({ nullable: true })
   refreshToken: string;
-  static refreshToken: void;
 }

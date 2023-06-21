@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { UserRepository } from './user.repository';
 import { UserEntity } from './entities/user.entity';
-import { CreateUserDto } from 'src/auth/dtos/create-user.dto';
+import { CreateUserDto } from '../auth/dtos/create-user.dto';
 
 export type User = any;
 
