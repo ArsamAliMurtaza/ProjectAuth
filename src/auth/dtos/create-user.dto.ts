@@ -41,4 +41,6 @@ export class CreateUserDto {
   @IsNotEmpty()
   @IsNumber()
   age: number;
+
+  refreshToken: string;
 }

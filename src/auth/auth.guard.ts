@@ -22,7 +22,6 @@ export class AuthGuard implements CanActivate {
       context.getClass(),
     ]);
     if (isPublic) {
-      // 💡 See this condition
       return true;
     }
     const request = context.switchToHttp().getRequest();
@@ -32,10 +31,8 @@ export class AuthGuard implements CanActivate {
     }
     try {
       const payload = await this.jwtService.verify(token, {
-        secret: 'secret', // We should code this in env file.
+        secret: 'secret',
       });
-      // 💡 We're assigning the payload to the request object here
-      // so that we can access it in our route handlers
       request['user'] = payload;
     } catch {
       throw new UnauthorizedException();
