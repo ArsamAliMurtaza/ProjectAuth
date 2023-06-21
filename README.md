@@ -25,6 +25,23 @@
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+The NestJS user authentication system is a secure and robust solution for user authentication and registration. The system incorporates various components, including user entities, repositories, services, and controllers, to handle user-related operations.
+
+The system utilizes JWT (JSON Web Tokens) for authentication, ensuring secure transmission of data and enabling stateless authentication. It also includes password encryption for enhanced security.
+
+The `UserEntity` represents the user model, containing attributes such as first name, last name, email, password, and age. The entity is extended from a base class that includes common fields like `id`, `createdAt`, and `updatedAt`.
+
+The `UserRepository` extends the TypeORM `Repository` class and provides methods to find user details by username and save user data. It handles conflicts in username registration and throws a custom `ConflictException` when a duplicate username is detected.
+
+The `UserService` communicates with the repository to perform user-related operations. It includes methods to find a user by username and create a new user based on the provided DTO.
+
+The `AuthService` handles user authentication and token management. It utilizes the `UserService` to validate user credentials during sign-in and generates JWT access and refresh tokens upon successful authentication. It also provides a method to refresh access tokens using a refresh token.
+
+The `AuthGuard` is an authentication guard that allows or denies access to protected routes based on the presence of a valid access token. It verifies the token using the JWT service and throws an `UnauthorizedException` when the token is invalid or missing.
+
+The `AppModule` serves as the entry point for the application. It configures the necessary modules, including TypeORM for database connectivity, and provides the required services and controllers.
+
+These fixes and improvements enhance the functionality and security of the user authentication system. With proper configuration and usage, this system can handle user registration, authentication, and authorization, ensuring a seamless and secure experience for users.
 
 ## Installation
 
@@ -61,13 +78,5 @@ $ npm run test:cov
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
 ## License
-
 Nest is [MIT licensed](LICENSE).
