@@ -22,13 +22,17 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Description of this project
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-The NestJS user authentication system is a secure and robust solution for user authentication and registration. The system incorporates various components, including user entities, repositories, services, and controllers, to handle user-related operations.
+The NestJS user authentication system in this repository is a secure and robust solution for user authentication and registration. The system incorporates various components, including user entities, repositories, services, and controllers, to handle user-related operations.
+While run this code, please access the following endpoints to test the APIs
+POST : localhost:3000/auth/register
+POST : localhost:3000/auth/login
+GET : localhost:3000/auth/profile
+POST : localhost:3000/auth/generateAccessToken
+POST : localhost:3000/auth/logout
 
-The system utilizes JWT (JSON Web Tokens) for authentication, ensuring secure transmission of data and enabling stateless authentication. It also includes password encryption for enhanced security.
-
+This system utilizes JWT (JSON Web Tokens) for authentication, ensuring secure transmission of data and enabling stateless authentication.
 The `UserEntity` represents the user model, containing attributes such as first name, last name, email, password, and age. The entity is extended from a base class that includes common fields like `id`, `createdAt`, and `updatedAt`.
 
 The `UserRepository` extends the TypeORM `Repository` class and provides methods to find user details by username and save user data. It handles conflicts in username registration and throws a custom `ConflictException` when a duplicate username is detected.
@@ -43,7 +47,7 @@ The `AppModule` serves as the entry point for the application. It configures the
 
 These fixes and improvements enhance the functionality and security of the user authentication system. With proper configuration and usage, this system can handle user registration, authentication, and authorization, ensuring a seamless and secure experience for users.
 
-## Installation
+## Installation of NEST
 
 ```bash
 $ npm install
