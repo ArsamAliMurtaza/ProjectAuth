@@ -28,11 +28,11 @@ The NestJS user authentication system in this repository is a secure and robust 
 
 While run this code, please access the following endpoints to test the APIs
 <ul>
-  POST : localhost:3000/auth/register
-  POST : localhost:3000/auth/login
-  GET : localhost:3000/auth/profile
-  POST : localhost:3000/auth/generateAccessToken
-  POST : localhost:3000/auth/logout
+  <li> POST : localhost:3000/auth/register </li>
+  <li> POST : localhost:3000/auth/login </li>
+  <li> GET : localhost:3000/auth/profile </li>
+  <li> POST : localhost:3000/auth/generateAccessToken </li>
+  <li> POST : localhost:3000/auth/logout </li>
 </ul>
 
 This system utilizes JWT (JSON Web Tokens) for authentication, ensuring secure transmission of data and enabling stateless authentication.
