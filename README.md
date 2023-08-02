@@ -25,12 +25,15 @@
 ## Description of this project
 
 The NestJS user authentication system in this repository is a secure and robust solution for user authentication and registration. The system incorporates various components, including user entities, repositories, services, and controllers, to handle user-related operations.
+
 While run this code, please access the following endpoints to test the APIs
-POST : localhost:3000/auth/register
-POST : localhost:3000/auth/login
-GET : localhost:3000/auth/profile
-POST : localhost:3000/auth/generateAccessToken
-POST : localhost:3000/auth/logout
+<ul>
+  POST : localhost:3000/auth/register
+  POST : localhost:3000/auth/login
+  GET : localhost:3000/auth/profile
+  POST : localhost:3000/auth/generateAccessToken
+  POST : localhost:3000/auth/logout
+</ul>
 
 This system utilizes JWT (JSON Web Tokens) for authentication, ensuring secure transmission of data and enabling stateless authentication.
 The `UserEntity` represents the user model, containing attributes such as first name, last name, email, password, and age. The entity is extended from a base class that includes common fields like `id`, `createdAt`, and `updatedAt`.
